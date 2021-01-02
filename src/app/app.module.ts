@@ -9,11 +9,15 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDialogModule} from '@angular/material/dialog';
 import { CoursesListComponent } from './courses-list/courses-list.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CoursesListComponent
+    CoursesListComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +26,10 @@ import { CoursesListComponent } from './courses-list/courses-list.component';
     MatSliderModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatDialogModule
+    MatDialogModule,
+    MatIconModule,
+    MatInputModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,12 +1,10 @@
 <div class="row">
-    <button mat-raised-button color="primary" (click)="openDialog()">new book</button>
       <div class="col-xs-10" 
       *ngFor="let course of courses; let i=index">
           <a style="cursor: pointer;" class="list-group-item clearfix" >
               <div class="pull-left">
                   <h4 class="list-group-item-heading">{{course.name}}</h4>
                   <p class="list-group-item-text">{{course.id}}</p>
-                  <button mat-Stroked-button color="accent" (click)="openEditDialog(i)">edit book</button>
               </div>
           </a>
       </div>
