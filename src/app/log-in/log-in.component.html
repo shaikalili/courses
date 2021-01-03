@@ -1,0 +1,40 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-10">
+           <h3>
+                wellcom to your courses app please enter your username and password to Log In 
+          </h3>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ol>
+                <li>
+                    <mat-form-field appearance="fill">
+                        <mat-label>What's your userName?</mat-label>
+                        <input matInput ="name" #userName>
+                      </mat-form-field> 
+                </li>
+                <li>
+           <mat-form-field appearance="fill">
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" #passWord>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+        </li>
+        </ol>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <button mat-raised-button color="primary" (click)="onLogIn()">Log In</button>
+            </div>
+        </div>
+    </div>
+</div>

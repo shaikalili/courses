@@ -12,12 +12,17 @@ import { CoursesListComponent } from './courses-list/courses-list.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import { HeaderComponent } from './header/header.component';
+import { StudentComponent } from './student/student.component';
+import { LogInComponent } from './log-in/log-in.component';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoursesListComponent,
-    HeaderComponent
+    HeaderComponent,
+    StudentComponent,
+    LogInComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,8 @@ import { HeaderComponent } from './header/header.component';
     MatFormFieldModule,
     MatDialogModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    MatListModule
     
   ],
   providers: [],
