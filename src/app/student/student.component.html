@@ -13,4 +13,9 @@
     <dt class="col-sm-3">adress:</dt>
     <dd class="col-sm-9">{{student.adress}} </dd>
     </dl>
+    <div class="row">
+        <div class="col-6">
+            <h2>your courses are:</h2>
+        </div>
+    </div>
 <app-courses-list *ngFor="let courseEl of courses" [course]=courseEl></app-courses-list>
