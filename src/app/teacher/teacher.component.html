@@ -1,0 +1,20 @@
+<div class=" col-5">
+    <div class=" rounded boder-left">
+
+        <h3 class=" text-primary"> welcome professor {{teacher.name}}</h3>
+        <dl class="row p-3 mb-2 bg-light text-dark">
+            <dd class="col-sm-3 text-primary ">id:</dd>
+            <dd class="col-sm-9 text-primary">{{teacher.id}}</dd>
+        </dl>
+        <button type="button" class="btn btn-outline-primary" (click)="openDialog()">change password</button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-5">
+        <div class="alert alert-primary" role="alert">
+           your courses are:
+          </div>
+    </div>
+</div>
+<app-teacher-courses *ngFor="let courseEl of courses" [course]=courseEl></app-teacher-courses>

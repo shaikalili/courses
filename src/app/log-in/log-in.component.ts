@@ -2,6 +2,7 @@ import { Component, ElementRef, ViewChild,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { StudentService } from '../students.service';
 import { Student } from '../student.model';
+import { TeacherService } from '../teacher.service';
 
 
 @Component({
@@ -14,8 +15,10 @@ export class LogInComponent implements OnInit {
 @ViewChild('userName')userNameRef:ElementRef;
 @ViewChild('passWord')passWordRef:ElementRef;
 student;
+teacher;
 
-constructor(private studentService:StudentService,private router:Router){
+constructor(private studentService:StudentService,private teacherService:TeacherService ,
+  private router:Router){
 
 }
 ngOnInit() {
@@ -23,14 +26,25 @@ ngOnInit() {
 }
 onLogIn(){
 if(this.studentService.getStudentByUserAndPassword(this.userNameRef.nativeElement.value,
-  this.passWordRef.nativeElement.value)==-1){
+  this.passWordRef.nativeElement.value)===-1
+  && this.teacherService.getTeacherByUserAndPassword(this.userNameRef.nativeElement.value,
+    this.passWordRef.nativeElement.value)===-1){
     prompt('please enter a valid password and user name');
   }
-  else{
-this.student=this.studentService.getStudentByUserAndPassword(this.userNameRef.nativeElement.value,
-this.passWordRef.nativeElement.value);
+   else if(this.studentService.getStudentByUserAndPassword(this.userNameRef.nativeElement.value,
+this.passWordRef.nativeElement.value)!=-1){
+  this.student=this.studentService.getStudentByUserAndPassword(this.userNameRef.nativeElement.value,
+    this.passWordRef.nativeElement.value);
 this.router.navigate(['student/'+this.student]);
   }
+  else{
+this.teacher=this.teacherService.getTeacherByUserAndPassword(
+  this.userNameRef.nativeElement.value,this.passWordRef.nativeElement.value
+)
+this.router.navigate(['teacher/'+this.teacher]);
+  }
+
+
 }
 
 }

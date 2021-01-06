@@ -1,21 +1,26 @@
+<div class=" col-5">
+    <div class=" rounded boder-left">
 
-<div class="row">
-    <div class="col-xs-12">
-        <h2>hello {{student.name}} wellcom back.</h2>
+        <h3 class=" text-success"> hello {{student.name}} welcome back.</h3>
+        <dl class="row">
+            <dd class="col-sm-3 ">id:</dd>
+            <dd class="col-sm-9 text-dark">{{student.id}}</dd>
+
+            <dd class="col-sm-3 ">phone:</dd>
+            <dd class="col-sm-9 text-dark">{{student.phone}} </dd>
+            <dd class="col-sm-3 ">adress:</dd>
+            <dd class="col-sm-9 text-dark">{{student.adress}} </dd>
+        </dl>
+        <button type="button" class="btn btn-outline-success" (click)="openDialog()">change password</button>
     </div>
 </div>
-<dl class="row">
-    <dt class="col-sm-3">id:</dt>
-    <dd class="col-sm-9">{{student.id}}</dd>
-  
-    <dt class="col-sm-3">phone number:</dt>
-    <dd class="col-sm-9">{{student.phone}} </dd>
-    <dt class="col-sm-3">adress:</dt>
-    <dd class="col-sm-9">{{student.adress}} </dd>
-    </dl>
-    <div class="row">
-        <div class="col-6">
-            <h2>your courses are:</h2>
-        </div>
+<hr>
+<div class="row">
+    <div class="col-5">
+        <div class="alert alert-success" role="alert">
+           your courses are:
+          </div>
     </div>
+</div>
+
 <app-courses-list *ngFor="let courseEl of courses" [course]=courseEl></app-courses-list>

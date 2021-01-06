@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { course } from '../cours.model';
 import { CourseService } from '../courses.service';
 
@@ -9,10 +9,12 @@ import { CourseService } from '../courses.service';
 })
 export class CoursesListComponent implements OnInit {
 @Input() course:course;
+@ViewChild('checked')checkedref:ElementRef;
+isChecked:boolean;
   constructor(private courseService:CourseService) { }
 
   ngOnInit(): void {
-
   }
+
 
 }

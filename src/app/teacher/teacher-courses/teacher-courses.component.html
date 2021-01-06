@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-7">
+        <div class="card card-body">
+            <h3 class="card-title text-danger">{{course.name}}</h3>
+            <p class="list-group-item-text ">{{course.id}}</p>
+            <p class="list-group-item-text">{{course.date}}</p>
+            <p class="list-group-item-text">{{course.days}}</p>
+        </div>
+    </div>
+    <div class="col-3">
+        <mat-form-field appearance="fill">
+            <mat-label>Toppings</mat-label>
+            <mat-select [formControl]="toppings" multiple>
+              <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+</div>

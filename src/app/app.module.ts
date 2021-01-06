@@ -15,6 +15,13 @@ import { HeaderComponent } from './header/header.component';
 import { StudentComponent } from './student/student.component';
 import { LogInComponent } from './log-in/log-in.component';
 import {MatListModule} from '@angular/material/list';
+import { FormsModule } from '@angular/forms';
+import { PasswordComponent } from './password/password.component';
+import { TeacherComponent } from './teacher/teacher.component';
+import { TeacherCoursesComponent } from './teacher/teacher-courses/teacher-courses.component';
+import { AddStudentComponent } from './add-student/add-student.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -22,7 +29,14 @@ import {MatListModule} from '@angular/material/list';
     CoursesListComponent,
     HeaderComponent,
     StudentComponent,
-    LogInComponent
+    LogInComponent,
+    PasswordComponent,
+    TeacherComponent,
+    TeacherCoursesComponent,
+    AddStudentComponent
+  ],
+  entryComponents:[
+    PasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +48,10 @@ import {MatListModule} from '@angular/material/list';
     MatDialogModule,
     MatIconModule,
     MatInputModule,
-    MatListModule
+    MatListModule,
+    FormsModule,
+    MatMenuModule,
+    MatSelectModule
     
   ],
   providers: [],

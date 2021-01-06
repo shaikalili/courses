@@ -1,13 +1,35 @@
-<a style="cursor: pointer;" class="list-group-item clearfix">
-    <h3 class="list-group-item-heading">{{course.name}}</h3>
-    <p class="list-group-item-text">{{course.id}}</p>
-    <p class="list-group-item-text">{{course.date}}</p>
-    <p class="list-group-item-text">{{course.days}}</p>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-        <label class="form-check-label" for="flexCheckIndeterminate">
-            j
-        </label>
-    </div>
 
-</a>
+<div class="row">
+    <div class="col-7">
+        <div class="card card-body">
+            <h3 class="card-title text-success">{{course.name}}</h3>
+            <p class="list-group-item-text ">{{course.id}}</p>
+            <p class="list-group-item-text">{{course.date}}</p>
+            <p class="list-group-item-text">{{course.days}}</p>
+        </div>
+    </div>
+    <div class="col-5">
+        <div class="card card-body">
+            <div class="form-check align-self-end" *ngIf="!isChecked">
+                <input type="checkbox" class="form-check-input align-self-end" value="" 
+                id="flexCheckIndeterminate">
+                <label class="form-check-label align-self-end text-success" for="flexCheckIndeterminate">
+                    attended class
+                </label>
+            </div>
+        </div>
+        <div class="card card-body">
+            <div class="form-check align-self-end">
+                <input type="checkbox" class="form-check-input align-self-end" value="" id="flexCheckIndeterminate"
+                [(ngModel)]="isChecked">
+                <label class="form-check-label align-self-end text-danger" for="flexCheckIndeterminate">
+                    did not attended class
+                </label>
+            </div>
+            <div class="form-floating" *ngIf="isChecked">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                <label for="floatingTextarea">please enter why?</label>
+              </div>
+        </div>
+    </div>
+</div>
