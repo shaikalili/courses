@@ -1,25 +1,30 @@
-<div class=" col-5">
-    <div class=" rounded boder-left">
-
-        <h3 class=" text-success"> hello {{student.name}} welcome back.</h3>
-        <dl class="row">
-            <dd class="col-sm-3 ">id:</dd>
-            <dd class="col-sm-9 text-dark">{{student.id}}</dd>
-
-            <dd class="col-sm-3 ">phone:</dd>
-            <dd class="col-sm-9 text-dark">{{student.phone}} </dd>
-            <dd class="col-sm-3 ">adress:</dd>
-            <dd class="col-sm-9 text-dark">{{student.adress}} </dd>
-        </dl>
-        <button type="button" class="btn btn-outline-success" (click)="openDialog()">change password</button>
+<nav class="navbar navbar-default col-md-3  p-1 bg-dark text-white">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <h3 class=" text-primary"> Welcome {{student.name}}</h3>
+        </div>
     </div>
+</nav>
+<br>
+<div class="col-md-3 ">
+<mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+       Student information.
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-student-info [student]="student"></app-student-info>
+  </mat-expansion-panel>
 </div>
+
+
+
 <hr>
 <div class="row">
-    <div class="col-5">
+    <div class="col-md-6 offset-md-3">
         <div class="alert alert-success" role="alert">
-           your courses are:
-          </div>
+            Your courses are:
+        </div>
     </div>
 </div>
 

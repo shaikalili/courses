@@ -5,8 +5,8 @@ import { Teacher } from "./teacher.model";
 export class TeacherService{
 teacher:Teacher
     private techers:Teacher[]=[
-        new Teacher('shai','213458741','shai','shai92'),
-        new Teacher('yossi','245682597','yossi','yossi91')
+        new Teacher('Shai','213458741','shai','shai92'),
+        new Teacher('Yossi','245682597','yossi','yossi91')
     ]
 
     getTeacherByUserAndPassword(user:string,pass:string){

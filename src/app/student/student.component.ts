@@ -23,9 +23,7 @@ courses:course[];
     this.courses=this.coursService.getCoursesByName(this.student.name);
   }
 
-openDialog(){
-this.dialog.open(PasswordComponent);
-}
+
 ngOnDestroy(){
   this.coursService.studentCorses=[];
 }

@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Date</th>
+      <th scope="col">Attended</th>
+      <th scope="col">reasson</th>
+    </tr>
+  </thead>
+  <tbody>
+   <tr *ngFor="let event of av; let i=index">
+      <th scope="row">{{i}}</th>
+      <td>{{event.date.toDateString()}}</td>
+      <td>{{event.attended}}</td>
+      <td>{{event.reason}}</td>
+    </tr>
+  </tbody>
+</table>

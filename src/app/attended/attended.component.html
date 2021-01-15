@@ -1,0 +1,29 @@
+<div class="col-xs-12">
+    <div class="card card-body">
+        <div class="form-check align-self-end" *ngIf="!isNoChecked">
+            <input type="checkbox" class="form-check-input align-self-end" value="" id="flexCheckIndeterminate"
+            [(ngModel)]="isYesChecked">
+            <label class="form-check-label align-self-end text-success" for="flexCheckIndeterminate">
+                attended class
+            </label>
+        </div>
+    </div>
+    <div class="card card-body">
+        <div class="form-check align-self-end">
+            <input type="checkbox" class="form-check-input align-self-end" value="" id="flexCheckIndeterminate"
+                [(ngModel)]="isNoChecked">
+            <label class="form-check-label align-self-end text-danger" for="flexCheckIndeterminate">
+                did not attended class
+            </label>
+        </div>
+        <div class="form-floating" *ngIf="isNoChecked">
+            <textarea class="form-control" placeholder="Leave a comment here" #reason
+             id="floatingTextarea"></textarea>
+            <label for="floatingTextarea">please enter why?</label>
+        </div>
+    </div>
+    <br>
+    <div class="col-md-3 offset-md-4">
+        <button mat-flat-button color="primary" (click)="onSave()">Save</button>
+</div>
+</div>

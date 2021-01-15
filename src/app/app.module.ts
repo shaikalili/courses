@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FullCalendarModule } from '@fullcalendar/angular'; // the main connector. must go first
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
+import interactionPlugin from '@fullcalendar/interaction';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,13 +17,30 @@ import { HeaderComponent } from './header/header.component';
 import { StudentComponent } from './student/student.component';
 import { LogInComponent } from './log-in/log-in.component';
 import {MatListModule} from '@angular/material/list';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PasswordComponent } from './password/password.component';
 import { TeacherComponent } from './teacher/teacher.component';
 import { TeacherCoursesComponent } from './teacher/teacher-courses/teacher-courses.component';
 import { AddStudentComponent } from './add-student/add-student.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSelectModule} from '@angular/material/select';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { AddCourseComponent } from './add-course/add-course.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { StudentInfoComponent } from './student/student-info/student-info.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { AttendedComponent } from './attended/attended.component';
+import { StudentAttendedComponent } from './teacher/student-attended/student-attended.component';
+import {MatTableModule} from '@angular/material/table';
+
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin
+
+]);
 
 @NgModule({
   declarations: [
@@ -33,10 +52,18 @@ import {MatSelectModule} from '@angular/material/select';
     PasswordComponent,
     TeacherComponent,
     TeacherCoursesComponent,
-    AddStudentComponent
+    AddStudentComponent,
+    AddCourseComponent,
+    CalendarComponent,
+    StudentInfoComponent,
+    AttendedComponent,
+    StudentAttendedComponent
   ],
   entryComponents:[
-    PasswordComponent
+    PasswordComponent,
+    AddStudentComponent,
+    AddCourseComponent,
+    AttendedComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +78,15 @@ import {MatSelectModule} from '@angular/material/select';
     MatListModule,
     FormsModule,
     MatMenuModule,
-    MatSelectModule
+    MatSelectModule,
+    ReactiveFormsModule,
+    MatSidenavModule,
+    FullCalendarModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatGridListModule,
+    MatExpansionModule,
+    MatTableModule
     
   ],
   providers: [],

@@ -1,11 +1,11 @@
-<h2><span class="label label-default">New Student</span></h2>
+<h2><span class="label label-default">New Course</span></h2>
 <div class="row">
     <div class="col-xs-12">
-        <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
             <div class="row">
                 <div class="col-xs-12">
                     <div class="form-group">
-                        <label for="name">Student Name:</label>
+                        <label for="name">Course Name:</label>
                         <input type="text" id="name" formControlName="name"
                          class="form-control">
                     </div>
@@ -14,24 +14,26 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="form-group">
-                        <label for="price">ID:</label>
+                        <label for="price">Course-symbol:</label>
                         <input type="text" id="Id" formControlName="Id"  class="form-control">
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="form-group">
-                        <label for="imagePath">Phone-Nuber:</label>
-                        <input type="text" id="phone" formControlName="phone" class="form-control">
-                    </div>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Choose a date</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="courseDate">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12">
                     <div class="form-group">
-                        <label for="description">Adress:</label>
-                        <input type="text" id="adress" formControlName="adress" class="form-control">
+                        <label for="description">Days of the week:</label>
+                        <input type="text" id="courseDays" formControlName="courseDays" class="form-control">
                     </div>
                 </div>
             </div>
@@ -39,8 +41,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <p>
-                        Default <mark class="text-info" >userName</mark> and
-                         <mark class="text-info">password</mark> will be the name of the student.
+                       Teacher of this course:<mark class="text-primary"> Professor {{teacherName}}.</mark>
                     </p>
                 </div>
             </div>
@@ -52,3 +53,4 @@
         </form>
     </div>
 </div>
+
